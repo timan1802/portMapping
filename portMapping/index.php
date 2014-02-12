@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
@@ -12,14 +11,14 @@
 입력된 절대 정보는 저장되지 않습니다.
 <ol start="1">
 	<li>입력된 정보는 <b><font color="red">절대</font></b> 저장되지 않습니다.</li>
-	<li>사용해 보시고, 피드백 부탁드립니다. <a href="http://blog.netchk.com/?p=186">링크</a></li>
+	<li>사용해 보시고, 피드백 부탁드립니다. <a href="http://blog.renoeve.com/?p=186">링크</a></li>
 </ol>
 
 
 <form action="proc.php" method="POST">
 <table width="100%" border="1">
 <tr>
-	<td rowspan="2">L3장비</td>
+	<td rowspan="2">L3 Device(Router)</td>
 	<td>IP Address</td>
     <td>snmp community</td>
 </tr>
@@ -29,7 +28,7 @@
 </tr>
 <br /><br />
 <tr>
-	<td rowspan="2">L2장비</td>
+	<td rowspan="2">L2 Device(Switch)</td>
 	<td>IP Address</td>
     <td>snmp community</td>
 </tr>

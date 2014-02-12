@@ -3,12 +3,6 @@ include_once ('lib.php');
 include_once ('config.php');
 
 
-//$switch_host = "222.122.20.136";
-//$switch_host = "125.141.212.124";
-//$switch_community = "renoeve";
-//$route_host = "222.122.20.1";
-//$route_community = "renoeve";
-
 $switch_host=$_POST['l2_ip'];
 $switch_community = $_POST['l2_comm'];
 $route_host =  $_POST['l3_ip'];
@@ -38,14 +32,6 @@ for($i=0;$i<count($bTable_arr[2]);$i++)
     }
 }
 
-//echo '3만 추출';
-//array2($bTableOnlyLearned);
-//echo '<br />';
-//
-//
-//
-//echo 'port치환';
-
 //포트 치환
 for($i=0;$i<=count($bTableOnlyLearned[0]);$i++)
 {
@@ -58,12 +44,7 @@ for($i=0;$i<=count($bTableOnlyLearned[0]);$i++)
         }
     }
 }
-//array2($bTableOnlyLearned);
-//
-//
-//echo 'atTable 맥어드레스 비교';
-//
-//array2($atTable_arr);
+
 
 
 for($i=0;$i<=count($atTable_arr[1]);$i++)
@@ -72,10 +53,7 @@ for($i=0;$i<=count($atTable_arr[1]);$i++)
     {
         if($atTable_arr[1][$i]==$bTableOnlyLearned[0][$j])
         {
-//            echo '맥어드레스:'.$atTable_arr[1][$i];
-//            echo '아이피:'.hex2ip($atTable_arr[2][$i]);
-//            echo '포트넘버'.$bTableOnlyLearned[1][$j];
-            
+
             //echo '<br />';
             $result[0][]=$bTableOnlyLearned[1][$j]; #포트넘버()ifIndex)
             $result[1][]=$atTable_arr[1][$i];   #MAC
@@ -84,19 +62,16 @@ for($i=0;$i<=count($atTable_arr[1]);$i++)
     }
     
 }
-//echo 'count'.$j;
 
     
-    ?>
+ ?>
     
 
 
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
+<html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
 	<meta name="author" content="byGood" />
@@ -128,10 +103,6 @@ $speed=$ifTable_arr[4][$i]/1000/1000;
     else{
         $status='<font color="red">OFF</font>';
 	}
-    //////
-
-
-
 
 ?>
 <tr>
@@ -140,6 +111,7 @@ $speed=$ifTable_arr[4][$i]/1000/1000;
 	<td><?=$speed?>M</td>
     <td>
     <?php
+    
     //포트확인
     for($j=0;$j<=count($result[0]);$j++)
     {

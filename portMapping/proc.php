@@ -16,9 +16,9 @@ if(!$route_community){echo '<script type="text/javascript">alert("L3장비 snmp co
 
 
 $ifTable_arr = getTable($switch_host, $switch_community, $ifTable, 8); 
-$atTable_arr = getTable($route_host, $route_community, $atTable, 3); //1.ifIndex 2.맥어드레스, 3.IP
-$bTable_arr = getTable($switch_host, $switch_community, $bTable, 3);  //1맥어드레스,2포트,3status
-$bTablePort_arr = getTable($switch_host, $switch_community, $bTablePort, 2); //1.basePort 2.ifIndex 포트
+$atTable_arr = getTable($route_host, $route_community, $atTable, 3); //1.ifIndex 2.Mac Addr, 3.IP
+$bTable_arr = getTable($switch_host, $switch_community, $bTable, 3);  //1.Mac Addr,2포트,3.status
+$bTablePort_arr = getTable($switch_host, $switch_community, $bTablePort, 2); //1.basePort 2.ifIndex port
 
 
 //3learned만 추출
@@ -55,7 +55,7 @@ for($i=0;$i<=count($atTable_arr[1]);$i++)
         {
 
             //echo '<br />';
-            $result[0][]=$bTableOnlyLearned[1][$j]; #포트넘버()ifIndex)
+            $result[0][]=$bTableOnlyLearned[1][$j]; #Port Number ()ifIndex)
             $result[1][]=$atTable_arr[1][$i];   #MAC
             $result[2][]=hex2ip($atTable_arr[2][$i]); #IP
         }
@@ -76,7 +76,7 @@ for($i=0;$i<=count($atTable_arr[1]);$i++)
 	<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
 	<meta name="author" content="byGood" />
 
-	<title>포트 매핑 프로그램</title>
+	<title>Port Mapping</title>
 </head>
 
 <body>
@@ -94,7 +94,7 @@ for($i=0;$i<=count($ifTable_arr[0]);$i++)
 
 $desc=$ifTable_arr[1][$i];
 $speed=$ifTable_arr[4][$i]/1000/1000;
-    //링크 UP 체크
+    //Ling UP Check
     if(($ifTable_arr[6][$i]=='up') and ($ifTable_arr[7][$i]=='up'))
 	{
         $status='<font color="green">ON</font>';
